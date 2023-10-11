@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_datxeonline" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=103.90.233.59,1433;Initial Catalog=db_datxeonline;User ID=admin_datxeonline" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_datxeonlineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="db_owner.tb_BaiViet" Member="tb_BaiViets">
+    <Type Name="tb_BaiViet">
+      <Column Name="baiviet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="baiviet_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="baiviet_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="baiviet_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="chude_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="baiviet_img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="baiviet_ngaytao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="baiviet_loai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="baiviet_title1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="baiviet_gannhat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbNewsCate" Member="tbNewsCates">
+    <Type Name="tbNewsCate">
+      <Column Name="newscate_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="newscate_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="newscate_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="newscate_datecreate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="newscate_show" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="language_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="newcate_parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="newcate_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbNewsCate_tbNew" Member="tbNews" ThisKey="newscate_id" OtherKey="newscate_id" Type="tbNew" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tb_ChuDeSlide" Member="tb_ChuDeSlides">
+    <Type Name="tb_ChuDeSlide">
+      <Column Name="chudesl_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="chudesl_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="chude_loai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="chude_img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tb_DichVu" Member="tb_DichVus">
+    <Type Name="tb_DichVu">
+      <Column Name="dichvu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dichvu_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dichvu_dongia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dichvu_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dichvu_giathanh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tb_Slide" Member="tb_Slides">
+    <Type Name="tb_Slide">
+      <Column Name="slide_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="slide_img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="chudesl_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="slide_ngaytao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="slide_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="slide_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tbLichSuThaoTac" Member="tbLichSuThaoTacs">
+    <Type Name="tbLichSuThaoTac">
+      <Column Name="lstt_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lstt_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lstt_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lstt_ngaytao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tbSeo" Member="tbSeos">
+    <Type Name="tbSeo">
+      <Column Name="seo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="seo_keywword" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="seo_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="seo_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="seo_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="seo_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="seo_page" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="db_owner.tbThongTinThueXe" Member="tbThongTinThueXes">
+    <Type Name="tbThongTinThueXe">
+      <Column Name="thuexe_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thuexe_sdt" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuexe_diemdon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuexe_diemden" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuexe_hidden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="thuexe_taixe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuexe_ngaytao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_ngayhien" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_ngaydi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_choxacnhan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="thuexe_thoigiancho" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_thoigiannhankhach" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_loaixe" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thuexe_thoigianhoanthanhchuyen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thuexe_soghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms">
+    <Type Name="admin_AccessGroupUserForm">
+      <Column Name="guf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="guf_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="admin_Form_admin_AccessGroupUserForm" Member="admin_Form" ThisKey="form_id" OtherKey="form_id" Type="admin_Form" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserForm" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules">
+    <Type Name="admin_AccessGroupUserModule">
+      <Column Name="gum_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gum_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserModule" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_Module_admin_AccessGroupUserModule" Member="admin_Module" ThisKey="module_id" OtherKey="module_id" Type="admin_Module" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_AccessUserForm" Member="admin_AccessUserForms">
+    <Type Name="admin_AccessUserForm">
+      <Column Name="uf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uf_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="admin_Form_admin_AccessUserForm" Member="admin_Form" ThisKey="form_id" OtherKey="form_id" Type="admin_Form" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="admin_User_admin_AccessUserForm" Member="admin_User" ThisKey="username_id" OtherKey="username_id" Type="admin_User" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_Form" Member="admin_Forms">
+    <Type Name="admin_Form">
+      <Column Name="form_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="form_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="form_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="form_link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="form_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="module_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="admin_Form_admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms" ThisKey="form_id" OtherKey="form_id" Type="admin_AccessGroupUserForm" />
+      <Association Name="admin_Form_admin_AccessUserForm" Member="admin_AccessUserForms" ThisKey="form_id" OtherKey="form_id" Type="admin_AccessUserForm" />
+      <Association Name="admin_Module_admin_Form" Member="admin_Module" ThisKey="module_id" OtherKey="module_id" Type="admin_Module" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_GroupUser" Member="admin_GroupUsers">
+    <Type Name="admin_GroupUser">
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="groupuser_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="groupuser_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserForm" Member="admin_AccessGroupUserForms" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_AccessGroupUserForm" />
+      <Association Name="admin_GroupUser_admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_AccessGroupUserModule" />
+      <Association Name="admin_GroupUser_admin_User" Member="admin_Users" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_Module" Member="admin_Modules">
+    <Type Name="admin_Module">
+      <Column Name="module_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="module_position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="module_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="module_icon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="module_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="admin_Module_admin_AccessGroupUserModule" Member="admin_AccessGroupUserModules" ThisKey="module_id" OtherKey="module_id" Type="admin_AccessGroupUserModule" />
+      <Association Name="admin_Module_admin_Form" Member="admin_Forms" ThisKey="module_id" OtherKey="module_id" Type="admin_Form" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admin_User" Member="admin_Users">
+    <Type Name="admin_User">
+      <Column Name="username_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username_username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_fullname" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="username_phone" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username_loaixenhan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="admin_User_admin_AccessUserForm" Member="admin_AccessUserForms" ThisKey="username_id" OtherKey="username_id" Type="admin_AccessUserForm" />
+      <Association Name="admin_GroupUser_admin_User" Member="admin_GroupUser" ThisKey="groupuser_id" OtherKey="groupuser_id" Type="admin_GroupUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbNews" Member="tbNews">
+    <Type Name="tbNew">
+      <Column Name="news_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="news_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_summary" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="news_createdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="news_show" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="newscate_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title_web" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_keywords" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="h1_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link_seo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="meta_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tbNewsCate_tbNew" Member="tbNewsCate" ThisKey="newscate_id" OtherKey="newscate_id" Type="tbNewsCate" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+</Database>
